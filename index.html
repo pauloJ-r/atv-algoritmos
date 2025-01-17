@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clínica - Controle de Atendimentos</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .container { max-width: 700px; margin: auto; text-align: center; }
+        form { margin: 20px 0; }
+        label { display: block; margin: 10px 0 5px; }
+        input, select, button { margin: 10px 0; padding: 10px; font-size: 16px; width: 100%; }
+        ul { list-style-type: none; padding: 0; }
+        li { padding: 5px; border-bottom: 1px solid #ccc; }
+        section { margin: 20px 0; }
+    </style>
+</head>
+<body>
+    <h1>Sistema de Atendimento</h1>
+    <div>
+        <h2>Cadastro</h2>
+        <form id="receptionist-form">
+            <input type="text" id="receptionist-name" placeholder="Nome da Recepcionista" required />
+            <button type="submit">Adicionar Recepcionista</button>
+        </form>
+        <form id="doctor-form">
+            <input type="text" id="doctor-name" placeholder="Nome do Médico" required />
+            <button type="submit">Adicionar Médico</button>
+        </form>
+        <form id="patient-form">
+            <input type="text" id="patient-name" placeholder="Nome do Paciente" required />
+            <select id="patient-type">
+                <option value="urgencia">Urgência</option>
+                <option value="prioridade">Prioridade</option>
+                <option value="normal">Normal</option>
+            </select>
+            <button type="submit">Adicionar Paciente</button>
+        </form>
+    </div>
+    <div id="guiche-container" class="panel">
+        <h2>Guichês</h2>
+    </div>
+    <div id="doctor-container" class="panel">
+        <h2>Atendimento Médico</h2>
+    </div>
+    <h1>Sistema de Estatísticas de Atendimento</h1>
+    <div>
+        <button id="generate-stats">Gerar Estatísticas</button>
+    </div>
+    <div id="stats-container" class="panel">
+        <h2>Estatísticas</h2>
+        <p>Pressione o botão acima para gerar as estatísticas de atendimento.</p>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
