@@ -4,44 +4,51 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Clínica - Controle de Atendimentos</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="index.css">
 </head>
 <body>
-    <h1>Sistema de Atendimento</h1>
-    <div>
-        <h2>Cadastro</h2>
-        <form id="receptionist-form">
-            <input type="text" id="receptionist-name" placeholder="Nome da Recepcionista" required />
-            <button type="submit">Adicionar Recepcionista</button>
-        </form>
-        <form id="doctor-form">
-            <input type="text" id="doctor-name" placeholder="Nome do Médico" required />
-            <button type="submit">Adicionar Médico</button>
-        </form>
-        <form id="patient-form">
-            <input type="text" id="patient-name" placeholder="Nome do Paciente" required />
-            <select id="patient-type">
-                <option value="urgencia">Urgência</option>
-                <option value="prioridade">Prioridade</option>
-                <option value="normal">Normal</option>
-            </select>
-            <button type="submit">Adicionar Paciente</button>
-        </form>
-    </div>
-    <div id="guiche-container" class="panel">
-        <h2>Guichês</h2>
-    </div>
-    <div id="doctor-container" class="panel">
-        <h2>Atendimento Médico</h2>
-    </div>
-    <h1>Sistema de Estatísticas de Atendimento</h1>
-    <div>
-        <button id="generate-stats">Gerar Estatísticas</button>
-    </div>
-    <div id="stats-container" class="panel">
-        <h2>Estatísticas</h2>
-        <p>Pressione o botão acima para gerar as estatísticas de atendimento.</p>
-    </div>
+    <header>
+        <h1>Sistema de Atendimento da Clínica</h1>
+    </header>
+    <main class="container">
+        <section class="form-section">
+            <h2>Cadastro</h2>
+            <form id="receptionist-form" class="form">
+                <input type="text" id="receptionist-name" placeholder="Nome da Recepcionista" required />
+                <button type="submit">Adicionar Recepcionista</button>
+            </form>
+            <form id="doctor-form" class="form">
+                <input type="text" id="doctor-name" placeholder="Nome do Médico" required />
+                <button type="submit">Adicionar Médico</button>
+            </form>
+            <form id="patient-form" class="form">
+                <input type="text" id="patient-name" placeholder="Nome do Paciente" required />
+                <select id="patient-type">
+                    <option value="urgencia">Urgência</option>
+                    <option value="prioridade">Prioridade</option>
+                    <option value="normal">Normal</option>
+                </select>
+                <button type="submit">Adicionar Paciente</button>
+            </form>
+        </section>
+        <section id="guiche-container" class="panel">
+            <h2>Guichês</h2>
+        </section>
+        <section id="doctor-container" class="panel">
+            <h2>Atendimento Médico</h2>
+        </section>
+        <section class="stats-section">
+            <h2 class="section-h2">Sistema de Estatísticas de Atendimento</h2>
+            <button id="generate-stats">Gerar Estatísticas</button>
+            <div id="stats-container" class="panel">
+                <p>Pressione o botão acima para gerar as estatísticas de atendimento.</p>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>© 2025 Clínica de Atendimento. Todos os direitos reservados.</p>
+    </footer>
+    <div id="toast"></div>
     <script src="app.js"></script>
 </body>
 </html>
