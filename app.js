@@ -149,6 +149,16 @@ document.addEventListener("DOMContentLoaded", function () {
             return priorityOrder[a.type] - priorityOrder[b.type];
         });
     }
+    function toast(message) {
+        const toastElement = document.getElementById('toast');
+        toastElement.textContent = message;
+        toastElement.classList.add('show');
+    
+        setTimeout(() => {
+            toastElement.classList.remove('show');
+        }, 3000); // O toast ficará visível por 3 segundos
+    }
+    
 
     function atenderPaciente(guicheIndex) {
         const prioritizedPatients = prioritizePatients();
@@ -157,7 +167,7 @@ document.addEventListener("DOMContentLoaded", function () {
         );
 
         if (guichePatients.length === 0) {
-            alert(`Nenhum paciente na fila do Guichê ${guicheIndex + 1}.`);
+            toast(`Nenhum paciente na fila do Guichê ${guicheIndex + 1}.`);
             return;
         }
 
@@ -169,7 +179,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         updateQueues();
         updateDoctorQueues();
-        alert(`Paciente ${patient.name} foi atendido no Guichê ${guicheIndex + 1}.`);
+        toast(`Paciente ${patient.name} foi atendido no Guichê ${guicheIndex + 1}.`);
     }
 
     function atenderPacienteMedico(doctorIndex) {
@@ -178,7 +188,7 @@ document.addEventListener("DOMContentLoaded", function () {
         );
 
         if (doctorPatients.length === 0) {
-            alert(`Nenhum paciente na fila para o Médico ${doctorIndex + 1}.`);
+            toast(`Nenhum paciente na fila para o Médico ${doctorIndex + 1}.`);
             return;
         }
 
@@ -188,7 +198,7 @@ document.addEventListener("DOMContentLoaded", function () {
             (stats.doctorStats[doctors.toArray()[doctorIndex]] || 0) + 1;
 
         updateDoctorQueues();
-        alert(`Paciente ${patient.name} foi atendido pelo Médico ${doctors.toArray()[doctorIndex]}.`);
+        toast(`Paciente ${patient.name} foi atendido pelo Médico ${doctors.toArray()[doctorIndex]}.`);
     }
 
     document.getElementById("receptionist-form")?.addEventListener("submit", function (event) {
